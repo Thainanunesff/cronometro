@@ -1,0 +1,247 @@
+/* Reset básico e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    /* Gradiente igual ao do React - aprendi que dá pra fazer gradientes incríveis só com CSS */
+    background: linear-gradient(135deg, #9333ea 0%, #ec4899 50%, #fb923c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Container principal - centralizei tudo aqui */
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Card principal com efeito glassmorphism */
+.card {
+    /* Esse backdrop-filter foi um desafio! Descobri que cria aquele efeito de vidro fosco */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Seção do cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+}
+
+.title-section h1 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+}
+
+/* Seção principal do cronômetro */
+.timer-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Display do tempo - aqui foi onde mais aprendi sobre flexbox */
+.time-display {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.time-unit {
+    text-align: center;
+}
+
+.time-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    font-family: 'Courier New', monospace; /* Fonte mono igual ao React */
+    line-height: 1;
+}
+
+.time-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.25rem;
+}
+
+.time-separator {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+/* Indicador de status */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ef4444; /* Vermelho quando pausado */
+    transition: all 0.3s ease;
+}
+
+/* Animação quando está rodando - isso foi legal de implementar! */
+.status-dot.running {
+    background: #22c55e; /* Verde quando rodando */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.status-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Seção dos botões de controle */
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botão principal (Iniciar/Parar) */
+.btn-primary {
+    flex: 1;
+    height: 3.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    /* Começa verde (Iniciar) */
+    background: #22c55e;
+    color: white;
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+}
+
+.btn-primary:hover {
+    background: #16a34a;
+    transform: translateY(-1px);
+}
+
+/* Estado quando está rodando (vira vermelho - Parar) */
+.btn-primary.stop {
+    background: #ef4444;
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+}
+
+.btn-primary.stop:hover {
+    background: #dc2626;
+}
+
+/* Botão secundário (Reset) */
+.btn-secondary {
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Seção do último tempo registrado */
+.last-time {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.last-time-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.last-time-value {
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* Responsividade - aprendi que é essencial pensar mobile-first */
+@media (max-width: 480px) {
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .time-number {
+        font-size: 2.5rem;
+    }
+    
+    .time-separator {
+        font-size: 2.5rem;
+        margin: 0 0.25rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-secondary {
+        width: 100%;
+    }
+}

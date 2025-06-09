@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro Moderno</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones do Lucide (versão CDN para não precisar instalar nada) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- Cabeçalho do app -->
+            <div class="header">
+                <div class="title-section">
+                    <i data-lucide="timer"></i>
+                    <h1>Cronômetro</h1>
+                </div>
+                <p class="subtitle">Meça seu tempo com estilo</p>
+            </div>
+
+            <!-- Display principal do tempo -->
+            <div class="timer-section">
+                <div class="time-display">
+                    <div class="time-unit">
+                        <div class="time-number" id="hours">00</div>
+                        <div class="time-label">HORAS</div>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-unit">
+                        <div class="time-number" id="minutes">00</div>
+                        <div class="time-label">MIN</div>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-unit">
+                        <div class="time-number" id="seconds">00</div>
+                        <div class="time-label">SEG</div>
+                    </div>
+                </div>
+
+                <!-- Indicador de status (rodando/pausado) -->
+                <div class="status-indicator">
+                    <div class="status-dot" id="statusDot"></div>
+                    <span class="status-text" id="statusText">Pausado</span>
+                </div>
+            </div>
+
+            <!-- Botões de controle -->
+            <div class="controls">
+                <button class="btn-primary" id="startStopBtn">
+                    <i data-lucide="play"></i>
+                    <span>Iniciar</span>
+                </button>
+                <button class="btn-secondary" id="resetBtn">
+                    <i data-lucide="rotate-ccw"></i>
+                </button>
+            </div>
+
+            <!-- Display do último tempo registrado -->
+            <div class="last-time" id="lastTimeSection" style="display: none;">
+                <p class="last-time-label">Última medição</p>
+                <div class="last-time-value" id="lastTimeValue">00:00:00</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
