@@ -19,7 +19,7 @@ Este cronômetro nasceu da minha vontade de criar algo útil e bonito ao mesmo t
 
 1. Clone este repositório:
 ```bash
-git clone https://github.com/seu-usuario/cronometro-moderno.git
+git clone https://github.com/thainanunesff/cronometro.git
 ```
 
 2. Abra o arquivo `index.html` no seu navegador
@@ -104,18 +104,3 @@ Este projeto está sob a licença MIT. Sinta-se livre para usar, modificar e dis
 ---
 
 **Desenvolvido com ❤️ e muito café ☕**
-
-Se você gostou do projeto, deixe uma ⭐ no repositório!
-```
-
-Pronto! Criei o cronômetro exatamente igual ao React, mas em HTML, CSS e JavaScript puro. O código está bem comentado e o README tem um tom pessoal, como se fosse realmente de um desenvolvedor iniciante compartilhando sua jornada de aprendizado.
-
-As principais funcionalidades estão todas lá:
-- Cronômetro funcional com horas, minutos e segundos
-- Botão que alterna entre Iniciar/Parar
-- Reset que salva o último tempo
-- Design moderno com glassmorphism
-- Totalmente responsivo
-- Animações suaves
-
-O código está organizado e comentado de forma que um recrutador conseguiria entender facilmente a lógica e ver que você domina os conceitos fundamentais!
