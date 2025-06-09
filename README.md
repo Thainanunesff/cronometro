@@ -67,7 +67,6 @@ git clone https://github.com/thainanunesff/cronometro.git
 
 ### Momentos "eureka" durante o desenvolvimento:
 
-- **Descobrir o `padStart()`**: Que método incrível para formatar números com zeros à esquerda!
 - **Entender event listeners**: Como eles conectam a interface com a lógica
 - **Dominar flexbox**: Finalmente entendi como centralizar elementos de verdade
 - **Animações CSS**: Como pequenos detalhes fazem toda a diferença na UX
